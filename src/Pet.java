@@ -17,6 +17,7 @@ class Pet {
 
     // Constructors
     public Pet(String initName, int initAge, double initWeight, String initType) {
+        // D.R.Y. - leverage existing full constructor bypassing empty string for missing breed.
         this(initName, initAge, initWeight, initType, "");
     }
 
@@ -66,12 +67,12 @@ class Pet {
     }
 
     public String toString() {
-        if (breed == null || breed.isEmpty()) {
-            return "Name: " + name + ", Age: " + age + ", Weight: " + weight +
-                    "Type: " + type;
-        } else
-            return "Name: " + name + ", Age: " + age + ", Weight: " + weight +
-                    "Type: " + type + "Breed: " + breed;
+        String val = "Name: " + name + ", Age: " + age + ", Weight: " + weight +
+                ", Type: " + type;
+        if (!(breed == null || breed.isEmpty()))
+          val +=   ", Breed: " + breed;
+
+        return val;
     }
 }
 
