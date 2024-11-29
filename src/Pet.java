@@ -17,7 +17,7 @@ class Pet {
 
     // Constructors
     public Pet(String initName, int initAge, double initWeight, String initType) {
-        // D.R.Y. - leverage existing full constructor bypassing empty string for missing breed.
+        // D.R.Y. - leverage existing full constructor by passing empty string for missing breed.
         this(initName, initAge, initWeight, initType, "");
     }
 
