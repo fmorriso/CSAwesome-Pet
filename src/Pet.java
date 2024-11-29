@@ -15,12 +15,24 @@ class Pet {
     // Write a constructor, accessor (get) methods, and a toString method. Use good
     // commenting.
 
-    // Constructors
+    /**
+     * @param initName - the pet's name
+     * @param initAge - the pet's age in years
+     * @param initWeight - the pet's weight in pounds
+     * @param initType - the type of pet
+     */
     public Pet(String initName, int initAge, double initWeight, String initType) {
         // D.R.Y. - leverage existing full constructor by passing empty string for missing breed.
         this(initName, initAge, initWeight, initType, "");
     }
 
+    /**
+     * @param initName - the pet's name
+     * @param initAge - the pet's age in years
+     * @param initWeight - the pet's weight in pounds
+     * @param initType - the type of pet
+     * @param initBreed - the pet's breed
+     */
     public Pet(String initName, int initAge, double initWeight, String initType, String initBreed) {
         name = initName;
         age = initAge;
@@ -66,9 +78,9 @@ class Pet {
         return breed;
     }
 
+    @Override
     public String toString() {
-        String val = "Name: " + name + ", Age: " + age + ", Weight: " + weight +
-                ", Type: " + type;
+        String val = "Name: " + name + ", Age: " + age + ", Weight: " + weight + ", Type: " + type;
         if (!(breed == null || breed.isEmpty()))
           val +=   ", Breed: " + breed;
 
